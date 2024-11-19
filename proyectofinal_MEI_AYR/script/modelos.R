@@ -43,7 +43,8 @@ out_modelo1 <- ode(y = state, times = time, func = sin.tratamiento, parms = para
 matplot(out_modelo1 [,1], out_modelo1 [, 5:7], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
 legend("topright", c("Susceptible", "Expuestos","Infectados"), col = 1:3, lty=1)
 
-
+matplot(out_modelo1 [,1], out_modelo1 [, 2:4], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
+legend("topright", c("Suscepetible", "Expuestos","Infectados"), col = 1:3, lty=1)
 
 ## MODELO 2 PROPUESTO
 tratamiento.infectivos <- function(time,state,parameters){
@@ -84,6 +85,8 @@ out_modelo2 <- ode(y = state, times = time, func = tratamiento.infectivos, parms
 matplot(out_modelo2 [,1], out_modelo2 [, 5:8], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
 legend("topright", c("Susceptible", "Expuestos","Infectados", "Tratamiento"), col = 1:4, lty=1)
 
+matplot(out_modelo2 [,1], out_modelo2 [, 2:4], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
+legend("topright", c("Suscepetible", "Expuestos","Infectados"), col = 1:3, lty=1)
 
 ## MODELO 3 PROPUESTO
 tratamiento.aleatorio <- function(time,state,parameters){
@@ -128,6 +131,8 @@ out_modelo3 <- ode(y = state, times = time, func = tratamiento.aleatorio, parms 
 matplot(out_modelo3 [,1], out_modelo3 [, 5:9], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
 legend("topright", c("Susceptible", "Expuestos","Infectados", "Tratamiento", "Inmunes temp"), col = 1:5, lty=1)
 
+matplot(out_modelo3 [,1], out_modelo3 [, 2:4], type = "l", xlab= "tiempo", ylab="poblacion", lwd= 2, lty= 1)
+legend("topright", c("Suscepetible", "Expuestos","Infectados"), col = 1:3, lty=1)
 
 ## MODELO 4 PROPUESTO
 tratamiento.general <- function(time,state,parameters){
