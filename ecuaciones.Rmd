@@ -1,0 +1,175 @@
+---
+title: "ecuaciones"
+author: "Rosa Bautista; Arturo Serna; Yrasema Vilchis"
+date: "2024-11-19"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+Modelo 1
+
+$$
+\frac{dS_m}{dt} = -\beta_1 S_m I_h - \mu_1 S_m + \nu_1
+$$
+
+$$\frac{dE_m}{dt} = \beta_2 S_m I_h - \sigma E_m - \mu_1 E_m
+$$
+
+
+$$
+\frac{dI_m}{dt} = \sigma E_m - \mu_1 I_m
+$$
+
+$$
+\frac{dS_h}{dt} = \nu_2 - \beta_2 S_h I_m - \mu_2 S_h
+$$
+
+$$
+\frac{dE_h}{dt} = \beta_2 S_h I_m - \alpha E_h - \mu_2 E_h
+$$
+
+$$
+\frac{dI_h}{dt} = \alpha E_h - \mu_2 I_h - \gamma I_h
+$$
+
+$$
+
+
+
+MODELO 2
+$$
+\frac{dS_m}{dt} = -\beta_1 S_m I_h - \mu_1 S_m + \nu_1
+$$
+
+$$
+\frac{dE_m}{dt} = \beta_2 S_m I_h - \sigma E_m - \mu_1 E_m
+$$
+
+$$
+\frac{dI_m}{dt} = \sigma E_m - \mu_1 I_m
+$$
+
+$$
+\frac{dS_h}{dt} = \nu_2 - \beta_2 S_h I_m - \mu_2 S_h + \rho T_h
+$$
+
+$$
+\frac{dE_h}{dt} = \beta_2 S_h I_m - \alpha E_h - \mu_2 E_h
+$$
+
+$$
+\frac{dI_h}{dt} = \alpha E_h - \mu_2 I_h - \gamma I_h
+$$
+
+$$
+\frac{dT_h}{dt} = \gamma I_h-\mu_2R_h - \rho T_h
+$$
+
+
+MODELO 3
+
+$$
+\frac{dS_m}{dt} = -\beta_1 S_m I_h - \mu_1 S_m + \nu_1
+$$
+
+$$
+\frac{dE_m}{dt} = \beta_2 S_m I_h - \sigma E_m - \mu_1 E_m
+$$
+
+$$
+\frac{dI_m}{dt} = \sigma E_m - \mu_1 I_m
+$$
+
+$$
+\frac{dS_h}{dt} = \nu_2 N - \beta_2 S_h I_m - \mu_2 S_h + \rho T_h - \gamma S_h \pi + \theta M_h
+$$
+
+$$
+\frac{dE_h}{dt} = \beta_2 S_h I_m - \alpha E_h - \mu_2 E_h - \gamma E_h \pi 
+$$
+
+$$
+\frac{dI_h}{dt} = \alpha E_h - \mu_2 I_h - \gamma I_h \pi
+$$
+
+$$
+\frac{dT_h}{dt} = \gamma I_h\pi -\mu_2R_h - \rho T_h
+$$
+
+$$
+\frac{dM_h}{dt} = \gamma \pi(S_h + E_h) -\theta M_h - \mu M_h
+$$
+
+$$
+{N} = S_h + E_h + I_h + T_h + M_h
+$$
+
+
+
+
+MODELO 4
+
+$$
+\frac{dS_m}{dt} = -\beta_1 S_m I_h - \mu_1 S_m + \nu_1
+$$
+
+$$
+\frac{dE_m}{dt} = \beta_2 S_m I_h - \sigma E_m - \mu_1 E_m
+$$
+
+$$
+\frac{dI_m}{dt} = \sigma E_m - \mu_1 I_m
+$$
+
+$$
+\frac{dS_h}{dt} = \nu_2 N - \beta_2 S_h I_m (1- (\pi - (I_h + T_h/N))) - \mu_2 S_h + \rho T_h - \gamma S_h (\pi- (I_h + T_h/N)) + \theta M_h
+$$
+
+$$
+\frac{dE_h}{dt} = \beta_2 S_h I_m (1- (\pi - (I_h + T_h/N))) - \alpha E_h (1- (\pi - (I_h + T_h/N)))- \mu_2 E_h - \gamma E_h (\pi- (I_h +T_h/N)) 
+$$
+
+$$
+\frac{dI_h}{dt} = \alpha E_h (1- (\pi - (I_h + T_h/N))) - \mu_2 I_h - \gamma I_h
+$$
+
+$$
+\frac{dT_h}{dt} = \gamma I_h -\mu_2R_h - \rho T_h
+$$
+
+$$
+\frac{dM_h}{dt} = \gamma (\pi - (I_h + T_h/N))(S_h + E_h) -\theta M_h - \mu M_h
+$$
+
+$$
+{N} = S_h + E_h + I_h + T_h + M_h
+$$
+
+
+## R0
+
+Modelo 1
+$$
+{R_0} = \frac{\beta_1 + \sigma}{\mu_1} + \frac{\beta_2 + \alpha}{\mu_2}
+$$
+
+Modelo 2
+$$
+{R_0} = \frac{\beta_1 + \sigma}{\mu_1} + \frac{\beta_2 + \alpha}{\mu_2 + \gamma + \rho}
+$$
+
+Modelo 3
+$$
+{R_0} = \frac{\beta_1 + \sigma}{\mu_1} + \frac{\beta_2 + \alpha}{\mu_2 + \gamma + \rho +  \theta}
+$$
+
+Modelo 4
+$$
+{R_0} = \frac{\beta_1 + \sigma}{\mu_1} + \frac{\beta´_2 + \alpha´}{\mu_2 + \gamma,  + \rho+ \theta}
+$$
+
